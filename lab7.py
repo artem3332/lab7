@@ -12,7 +12,7 @@ def proizvodnaya(x):
     return math.exp(-x)*(-x+math.exp(x/5)*math.cos(2*x/5)-1)
 #графики
 y_vector = [1,1]
-data = np.loadtxt("7.txt")
+data = np.loadtxt("abs.dat")
 xg = np.linspace(0,2,2000)
 yg = [tochnoresh(l) for l in xg]
 pryg=[proizvodnaya(l) for l in xg]
