@@ -4,6 +4,15 @@
 
 using namespace std;
 
+double tochnoresh(double x)
+{
+    return 1.0/2 * exp(-x) * (2 * x + exp(x / 5) * sin(2 * x / 5) - 2 * exp(x / 5) * cos(2 * x / 5) + 4);
+}
+double proizvodnaya(double x)
+{
+    return exp(-x) * (-x + exp(x / 5) * cos(2 * x / 5) - 1);
+}
+   
 double U(double x, double y, double z)
 {
     return (x * exp(-x) - 4 * y - 8 * z) / 5;//выраизили y''
@@ -40,15 +49,18 @@ int main()
     Y[0] = 1;
     Y1[0] = 0;
     
-    ofstream out;
-    out.open("7.txt");
-    out << X[0] << " " << Y[0] << " " << Y1[0] << endl;
+    ofstream out1;
+    out1.open("71.txt");
+    ofstream out2;
+    out2.open("72.txt");
+    out1 << X[0] << " " << Y[0] << " " << Y1[0] << endl;
     for (int i = 1; i < n; i++)//само решение задачи Коши
     {
         X[i] = a + i * h;
         Y[i] = Houna_Y_(X[i - 1], Y[i - 1], Y1[i - 1], h);
         Y1[i] = Houna_Z_(X[i - 1], Y[i - 1], Y1[i - 1], h);
-        out << X[i] << " " << Y[i] << " " << Y1[i] << endl;
+        out1 << X[i] << " " << Y[i] << " " << Y1[i] << " " << endl;
+        out2<< X[i]<<" "<< tochnoresh(X[i]) << " " << proizvodnaya(X[i]) << endl;
     }
   
     return 0;
