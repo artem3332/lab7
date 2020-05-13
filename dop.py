@@ -24,7 +24,7 @@ def F(f,y0,a,b,e):
     k2=f(a+h/2,[y[i,0]+h/2*k1[i] for i in range(0,n)])
    
     for i in range (0,n):
-        y[i,1]=y[i,0]+h/6*(k1[i]+2*k2[i])
+        y[i,1]=y[i,0]+h/2*(k1[i]+k2[i])
     
     #неявный метод Адамса при k=1 
     yst=90*np.ones((n,kq))
