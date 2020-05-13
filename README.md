@@ -22,5 +22,5 @@
 ## Результаты:
 В результате работы программы для функции ![Image alt](https://github.com/artem3332/lab7/blob/master/raw/1.png) <br></br>
 Мы получили данные графики:
-![Image alt](https://github.com/artem3332/lab7/blob/master/raw/res.jpg)
+![Image alt](https://github.com/artem3332/lab7/blob/master/raw/res.png)
 
