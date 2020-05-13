@@ -6,7 +6,7 @@ def func(y, x):
     f=np.array([y[1],(x * math.exp(-x) - 4 * y[0] - 8 * y[1]) / 5])
     return f
 #графики
-y_vector = [1,1]
+y_vector = [1,0]
 data1 = np.loadtxt("71.txt")
 data2 = np.loadtxt("72.txt")
 xg = np.linspace(0,2,2000)
