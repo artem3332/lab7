@@ -25,15 +25,15 @@ double V(double z)
 double Houna_Y_(double x, double y, double z, double h)//метод Хойна для y
 {
     double k1 = V(z);
-    double k2 = V(z + U(x, y, z) * h / 2);
-    return y + h * (k1 + 2 * k2) / 6;
+    double k2 = V(z + U(x, y, z) * h );
+    return y + h * (k1 +  k2) / 2;
 }
 
 double Houna_Z_(double x, double y, double z, double h)//метод Хойна для z=y'
 {
     double q1 = U(x, y, z);
-    double q2 = U(z + h / 2, y + z * h / 2, z + q1 * h / 2);
-    return z + h * (q1 + 2 * q2) / 6;
+    double q2 = U(z + h , y + z * h , z + q1 * h );
+    return z + h * (q1 +  q2) / 2;
 }
 
 int main()
