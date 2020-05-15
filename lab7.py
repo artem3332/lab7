@@ -9,6 +9,7 @@ def func(y, x):
 y_vector = [1,0]
 data1 = np.loadtxt("71.txt")
 data2 = np.loadtxt("72.txt")
+data3 = np.loadtxt("73.txt")
 xg = np.linspace(0,2,2000)
 Ode = odeint(func, y_vector, xg)
 plt.plot(xg, Ode[:,0], label = 'Встроенная функция')
@@ -19,5 +20,7 @@ plt.plot(data1[:, 0], data1[:, 2],label='производная функции �
 plt.plot(data2[:, 0], data2[:, 2],'--',label='точное решение производной функции')
 plt.plot(data1[:, 1], data1[:, 2],label='фазовый портрет')
 plt.plot(data2[:, 1], data2[:, 2],label='фазовый портрет точного решения')
+plt.plot(data3[:, 0], data3[:, 1],label='разностный график функций')
+plt.plot(data3[:, 0], data3[:, 2],'--',label='разностный график производных функций')
 plt.legend()
 plt.show()
