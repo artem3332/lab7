@@ -54,6 +54,8 @@ int main()
     ofstream out2;
     out2.open("72.txt");
     out1 << X[0] << " " << Y[0] << " " << Y1[0] << endl;
+    ofstream out3;
+    out3.open("73.txt");
     for (int i = 1; i < n; i++)//само решение задачи Коши
     {
         X[i] = a + i * h;
@@ -61,6 +63,7 @@ int main()
         Y1[i] = Houna_Z_(X[i - 1], Y[i - 1], Y1[i - 1], h);
         out1 << X[i] << " " << Y[i] << " " << Y1[i] << " " << endl;
         out2<< X[i]<<" "<< tochnoresh(X[i]) << " " << proizvodnaya(X[i]) << endl;
+        out3 << X[i] << " " << abs(tochnoresh(X[i]) - Y[i]) << " " << abs(proizvodnaya(X[i]) - Y1[i]) << endl;
     }
   
     return 0;
